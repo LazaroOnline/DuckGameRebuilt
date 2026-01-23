@@ -21,12 +21,12 @@ Note: your IDE will scream at you with 200+ warnings when building, which is nor
 
 ### Building on Windows
 
-* Make sure you have [.NET Framework 4.8](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48) installed and have a functioning IDE (like [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2022)) for C#
+* Make sure you have [.NET Framework 4.8.1](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net481) installed and have a functioning IDE (like [Visual Studio](https://learn.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=visualstudio)) for C#
 * Make sure the Startup Program leads to the exe produced in the ./bin folder after compiling
 * Restore the NuGet packages (most IDEs automatically do this anyway)
 * Build the solution with `Ctrl+Shift+B`
 * Run the game in Debug Mode with `F5` (will crash unless Steam is running)
-  * Make sure the currently selected project is DuckGame and not CrashWindow/FNA/anything else
+  * Make sure the selected startup project is `DuckGame` and not CrashWindow/FNA/anything else (should be already configured by default)
 
 ### Building on GNU/Linux
 

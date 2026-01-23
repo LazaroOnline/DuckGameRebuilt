@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!--Project was exported from assembly: D:\Program Files (x86)\Steam\steamapps\common\Duck Game\DuckGame.exe-->
   <PropertyGroup>
-	<StartupObject>DGWindows.WindowsPlatformStartup</StartupObject>
+    <StartupObject>DGWindows.WindowsPlatformStartup</StartupObject>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     <UseNETCoreGenerator>true</UseNETCoreGenerator>
     <CodeAnalysisRuleSet>emptyfind.ruleset</CodeAnalysisRuleSet>
@@ -36,7 +36,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A63C7222-EEE1-4BCD-844D-F6AC1501A655}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
