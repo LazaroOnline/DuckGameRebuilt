@@ -21,10 +21,10 @@
     <Platform Solution="*|x64" Project="x64" />
     <Platform Solution="*|x86" Project="x86" />
   </Project>
-  <Project Path="FNA/FNA.csproj" Id="35253ce1-c864-4cd3-8249-4d1319748e8f">
-    <BuildType Solution="ReleaseAutoUpdater|Any CPU" Project="Release" />
-    <Platform Solution="*|x64" Project="x64" />
-    <Platform Solution="*|x86" Project="x86" />
+  <Project Path="FNA/FNA.NetFramework.csproj">
+    <BuildType Solution="Release50pHost|*" Project="Release" />
+    <BuildType Solution="ReleaseAutoUpdater|*" Project="Release" />
+    <Platform Project="x86" />
   </Project>
   <Project Path="Rebuilder/build/Rebuilder.csproj" Id="b07bdc3c-3770-4a07-90d8-5c2a68e2172b">
     <BuildType Solution="Release50pHost|*" Project="Debug" />

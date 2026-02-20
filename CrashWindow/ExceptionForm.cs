@@ -1,10 +1,11 @@
-﻿using System;
-using System.Drawing;
-using System.Windows.Forms;
-using System.IO;
+﻿using CrashWindow;
+using System;
 using System.Diagnostics;
+using System.Drawing;
+using System.IO;
+using System.Windows.Forms;
 
-namespace DuckGame.src.MonoTime.Console
+namespace CrashWindow
 {
     public partial class ExceptionForm : Form
     {
@@ -47,6 +48,11 @@ namespace DuckGame.src.MonoTime.Console
             this.pictureBox1.BackColor = DefaultBackground;
             this.crashDescription.BackColor = DefaultBackground;
 
+
+            if (Program.IsLinux)
+            {
+                this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            }
 
             Bitmap b = (Bitmap)pictureBox1.Image; // sets icon
             IntPtr pIcon = b.GetHicon();
@@ -140,7 +146,7 @@ namespace DuckGame.src.MonoTime.Console
                         {
                             return;
                         }
-                        CrashWindow.CrashWindow.SendBugReport(pVersion, pMods, pAssembly, pException, pLogMessage, crashComments != null ? crashComments : "");
+                        CrashWindow.SendBugReport(pVersion, pMods, pAssembly, pException, pLogMessage, crashComments != null ? crashComments : "");
                     }
                     if (crashComments != null)
                     {
