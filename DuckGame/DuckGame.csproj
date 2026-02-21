@@ -189,13 +189,23 @@
   <ItemGroup Label="EmbeddedResource items now included by globbing that were not in the original project file">
     <EmbeddedResource Remove="src\MonoTime\Console\NetworkConsole.resx" />
   </ItemGroup>
+  <ItemGroup>
+    <DepsFiles Include="$(SolutionDir)deps\**\*" />
+  </ItemGroup>
+  <PropertyGroup>
+    <IsWindows>$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform(
+      $([System.Runtime.InteropServices.OSPlatform]::Windows) ))
+    </IsWindows>
+  </PropertyGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="git describe  --always --dirty --abbrev=40 &gt; &quot;$(ProjectDir)version.txt&quot;" />
     <Exec Command="echo $(SolutionDir) &gt; $(ProjectDir)SlnPath.txt" />
   </Target>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="cp -rv $(SolutionDir)deps/* $(SolutionDir)bin/" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Linux)))'" />
-    <Exec Command="Xcopy &quot;$(SolutionDir)\deps&quot; &quot;$(SolutionDir)\bin&quot; /E /H /C /I /Y" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))'" />
-    <Exec Command="call &quot;$(SolutionDir)shaders_source\buildshaders.bat&quot;" Condition="'$([System.Runtime.InteropServices.RuntimeInformation]::IsOSPlatform($([System.Runtime.InteropServices.OSPlatform]::Windows)))'" />
+      <Copy
+        SourceFiles="@(DepsFiles)"
+        DestinationFolder="$(SolutionDir)bin/%(RecursiveDir)"
+        SkipUnchangedFiles="true" />
+    <Exec Command="call &quot;$(SolutionDir)shaders_source\buildshaders.bat&quot;" Condition="'$(IsWindows)' == 'true'" />
   </Target>
 </Project>
