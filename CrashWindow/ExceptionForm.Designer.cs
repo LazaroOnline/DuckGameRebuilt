@@ -1,9 +1,9 @@
-﻿using CrashWindow;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-namespace DuckGame.src.MonoTime.Console
+
+namespace CrashWindow
 {
     public class ExRichTextBox : RichTextBox
     {
@@ -24,7 +24,6 @@ namespace DuckGame.src.MonoTime.Console
         public bool Selectable { get; set; }
         protected override void WndProc(ref Message m)
         {
-            
             //if (m.Msg == 32)
             //{
             //    m.Msg = 32;
@@ -79,7 +78,7 @@ namespace DuckGame.src.MonoTime.Console
             this.restartButton = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.richTextBox2 = new DuckGame.src.MonoTime.Console.ExRichTextBox();
+            this.richTextBox2 = new ExRichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,14 +193,7 @@ namespace DuckGame.src.MonoTime.Console
             // 
             this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
             this.richTextBox2.AutoSize = true;
-            if (Program.IsLinux)
-            {
-                this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            }
-            else
-            {
-                this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            }
+            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Cursor = System.Windows.Forms.Cursors.Default;
             this.richTextBox2.Location = new System.Drawing.Point(75, 8);
