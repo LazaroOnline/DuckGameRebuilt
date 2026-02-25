@@ -2,6 +2,7 @@ name: Build, Zip, and Release
 
 on:
   release:
+    workflow_dispatch:
     branches: [ "master" ]
     types: [published]
 
