@@ -4,11 +4,6 @@ using System.IO;
 using System.Reflection;
 using System.Diagnostics;
 
-[assembly: AssemblyTitle("Duck Game Rebuilt")]
-[assembly: AssemblyCompany("DGR Team")]
-[assembly: AssemblyDescription("An installer and manager mod for Duck Game Rebuilt")]
-[assembly: AssemblyVersion("1.0.0")]
-
 namespace DuckGame.Cobalt
 {
     public sealed class Mod : ClientMod
