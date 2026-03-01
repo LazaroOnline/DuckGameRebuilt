@@ -202,10 +202,7 @@
     <Exec Command="echo $(SolutionDir) &gt; $(ProjectDir)SlnPath.txt" />
   </Target>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Copy
-        SourceFiles="@(DepsFiles)"
-        DestinationFolder="$(SolutionDir)bin/%(RecursiveDir)"
-        SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(DepsFiles)" DestinationFolder="$(SolutionDir)bin/%(RecursiveDir)" SkipUnchangedFiles="true" />
     <Exec Command="call &quot;$(SolutionDir)shaders_source\buildshaders.bat&quot;" Condition="'$(IsWindows)' == 'true'" />
   </Target>
 </Project>
