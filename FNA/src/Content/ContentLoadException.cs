@@ -23,10 +23,12 @@ namespace Microsoft.Xna.Framework.Content
 
 		public ContentLoadException(string message) : base(message)
 		{
+			System.Diagnostics.Trace.WriteLine($"{message}");
 		}
 
 		public ContentLoadException(string message, Exception innerException) : base(message,innerException)
 		{
+			System.Diagnostics.Trace.WriteLine($"{message} {innerException?.Message}");
 		}
 
 		#endregion

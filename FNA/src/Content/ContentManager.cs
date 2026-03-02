@@ -263,6 +263,7 @@ namespace Microsoft.Xna.Framework.Content
 			{
 				throw new ContentLoadException("Opening stream error.", exception);
 			}
+			Trace.WriteLine($"LOADED XNB: {((System.IO.FileStream) stream).Name}");
 			return stream;
 		}
 
