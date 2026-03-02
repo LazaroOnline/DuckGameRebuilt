@@ -122,10 +122,6 @@
     <Reference Include="DGInput">
       <HintPath>lib\DGInput.dll</HintPath>
     </Reference>
-    <Reference Include="DiscordRPC, Version=1.0.175.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\DiscordRPC.dll</HintPath>
-    </Reference>
     <Reference Include="Mono.Cecil, Version=0.10.0.0, Culture=neutral, PublicKeyToken=50cebf1cceb9d05e, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>lib\Mono.Cecil.dll</HintPath>
@@ -137,6 +133,7 @@
     <Reference Include="NAudio">
       <HintPath>lib\NAudio.dll</HintPath>
     </Reference>
+    <!--
     <Reference Include="Newtonsoft.Json">
       <HintPath>lib\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -147,6 +144,7 @@
       <HintPath>lib\NVorbis.NAudioSupport.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    -->
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Speech" />
@@ -180,6 +178,14 @@
     <ProjectReference Include="..\Steam\Steam.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <!--
+    <PackageReference Include="NAudio.Vorbis" Version="1.5.0" />
+    <PackageReference Include="NVorbis" Version="0.10.5" />
+    <PackageReference Include="AdamsLair.NVorbis" Version="0.7.4" />
+    <PackageReference Include="MonoMod" Version="18.10.0.35263" />
+    -->
+    <PackageReference Include="NVorbis" Version="0.10.5" />
+    <PackageReference Include="DiscordRichPresence" Version="1.1.3.18" />
     <PackageReference Include="SixLabors.ImageSharp" Version="2.1.9" />
   </ItemGroup>
   <ItemGroup Label="Compile items now included by globbing that were not in the original project file">

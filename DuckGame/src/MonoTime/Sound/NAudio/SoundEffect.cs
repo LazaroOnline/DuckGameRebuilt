@@ -189,6 +189,9 @@ namespace DuckGame
                 waveStream = new AiffFileReader(pStream);
             else if (pExtension == "ogg")
             {
+                // https://github.com/naudio/Vorbis
+                // waveStream = new NAudio.Vorbis.VorbisWaveReader("path/to/file.ogg");
+                // waveStream = new NAudio.Vorbis.VorbisWaveReader(pStream);
                 waveStream = new VorbisWaveReader(pStream);
                 float num = 0f;
                 try
