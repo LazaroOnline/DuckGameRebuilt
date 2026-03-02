@@ -199,7 +199,7 @@
   </PropertyGroup>
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Exec Command="git describe  --always --dirty --abbrev=40 &gt; &quot;$(ProjectDir)version.txt&quot;" />
-    <Exec Command="echo $(SolutionDir) &gt; $(ProjectDir)SlnPath.txt" />
+    <WriteLinesToFile File="$(ProjectDir)SlnPath.txt" Lines="$(SolutionDir)" Overwrite="true" />
   </Target>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Copy SourceFiles="@(DepsFiles)" DestinationFolder="$(SolutionDir)bin/%(RecursiveDir)" SkipUnchangedFiles="true" />
