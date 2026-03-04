@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!--Project was exported from assembly: D:\Program Files (x86)\Steam\steamapps\common\Duck Game\DuckGame.exe-->
   <PropertyGroup>
-	<StartupObject>DGWindows.WindowsPlatformStartup</StartupObject>
+    <StartupObject>DGWindows.WindowsPlatformStartup</StartupObject>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
     <UseNETCoreGenerator>true</UseNETCoreGenerator>
     <CodeAnalysisRuleSet>emptyfind.ruleset</CodeAnalysisRuleSet>
@@ -2335,9 +2335,6 @@
     <Compile Include="src\MonoTime\UI\UIText.cs" />
     <Compile Include="src\MonoTime\UI\UIUnlockBox.cs" />
     <Compile Include="src\MonoTime\UI\UIWillBox.cs" />
-    <Compile Include="src\MonoTime\Windows\DeviceChangeNotifier.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="src\Program.cs" />
     <Compile Include="src\MonoTime\UI\UIMenuCustomUpdate.cs" />
     <Compile Include="Properties\Resources.Designer.cs" />
