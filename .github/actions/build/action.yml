@@ -37,8 +37,10 @@ runs:
     - name: Zip binaries
       shell: bash
       run: |
+        echo "::group::Zip binaries"
         mv ./bin ./DuckGameRebuilt
         cd ./DuckGameRebuilt && zip -r ../DuckGameRebuilt.zip ./* && cd ..
+        echo "::endgroup::"
 
     - name: Add Project Dependencies [#2]
       shell: bash
