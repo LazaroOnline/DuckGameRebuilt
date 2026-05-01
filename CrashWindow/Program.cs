@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using DuckGame.src.MonoTime.Console;
+
 namespace CrashWindow
 {
     public static class Program

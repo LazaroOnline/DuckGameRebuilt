@@ -1,0 +1,45 @@
+<Solution>
+  <Configurations>
+    <BuildType Name="Debug" />
+    <BuildType Name="Release" />
+    <BuildType Name="Release50pHost" />
+    <BuildType Name="ReleaseAutoUpdater" />
+    <Platform Name="Any CPU" />
+    <Platform Name="x86" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+  </Folder>
+  <Project Path="DuckGame/DuckGame.csproj" DefaultStartup="true">
+    <Platform Solution="*|Any CPU" Project="x86" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+  <Project Path="FNA/FNA.NetFramework.csproj">
+    <BuildType Solution="Release50pHost|*" Project="Release" />
+    <BuildType Solution="ReleaseAutoUpdater|*" Project="Release" />
+    <Platform Solution="*|Any CPU" Project="x86" />
+    <Platform Solution="*|x64" Project="x86" />
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+  <Project Path="Rebuilder/build/Rebuilder.csproj">
+    <BuildType Solution="Release50pHost|*" Project="Debug" />
+    <BuildType Solution="ReleaseAutoUpdater|*" Project="Debug" />
+    <Platform Solution="*|Any CPU" Project="Any CPU" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+  <Project Path="Steam/Steam.csproj">
+    <BuildType Solution="ReleaseAutoUpdater|Any CPU" Project="Release" />
+    <Platform Solution="*|Any CPU" Project="Any CPU" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+  <Project Path="CrashWindow/CrashWindow.csproj">
+    <BuildType Solution="ReleaseAutoUpdater|Any CPU" Project="Release" />
+    <Platform Solution="*|Any CPU" Project="Any CPU" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Platform Solution="*|x86" Project="x86" />
+  </Project>
+</Solution>
