@@ -428,14 +428,13 @@ namespace DuckGame
 
         public static string GetFullName(this MemberInfo mi) => $"{mi.DeclaringType}:{mi.Name}";
 
-        static PropertyInfo InternalFullName =
-            typeof(MethodBase).GetProperty("FullName", BindingFlags.NonPublic | BindingFlags.Instance);
+        static PropertyInfo InternalFullName = typeof(MethodBase).GetProperty("FullName", BindingFlags.NonPublic | BindingFlags.Instance);
 
         public static string GetFullName2(this MethodBase mi)
         {
             try
             {
-                return (string)InternalFullName.GetValue(mi);
+                return mi.GetFullSignature();
             }
             catch
             {
@@ -779,5 +778,26 @@ namespace DuckGame
         };
 
 
+        public static string GetFullSignature(this MethodBase method)
+        {
+            var typeName = method.DeclaringType?.FullName ?? "<UnknownType>";
+            var methodName = method.Name;
+
+            var parameters = method.GetParameters().Select(p => GetFriendlyTypeName(p.ParameterType));
+
+            return $"{typeName}.{methodName}({string.Join(", ", parameters)})";
+        }
+
+        private static string GetFriendlyTypeName(Type type)
+        {
+            if (type.IsGenericType)
+            {
+                var genericTypeName = type.Name.Substring(0, type.Name.IndexOf('`'));
+                var genericArgs = string.Join(", ", type.GetGenericArguments().Select(GetFriendlyTypeName));
+                return $"{genericTypeName}<{genericArgs}>";
+            }
+
+            return type.Name;
+        }
     }
 }
