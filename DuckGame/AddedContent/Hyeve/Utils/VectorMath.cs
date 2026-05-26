@@ -112,7 +112,7 @@ namespace AddedContent.Hyeve.Utils
             }
 
             points = points.OrderBy(x => -DistSqr(x, origin)).ToArray();
-            points = points.Reverse().ToArray();
+            points = System.Linq.Enumerable.Reverse(points).ToArray();
 
             return new ArraySegment<Vector2>(points, 0, number).Array;
         }
